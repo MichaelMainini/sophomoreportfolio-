@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Page</title>
+    <link type="text/css" rel="stylesheet" href="_assets/css/mystyle.css" media="screen">
+      <link rel="shortcut icon" href="_assets/images/favicon.ico">
+        <meta charset="utf-8">
+      <style>
+    div#clock { 
+      
+    color: #FEFFFF;
+        font-size: 3em;
+border: 5px solid black;
+       
+        background-color: #44797F;
+        Width: 34%;
+        justify-content: center;
+        margin: 0 auto; 
+        text-align: center;
+      
+        
+        
+        /* your style declarations go here */
+  
+          
+          
+          
+  </style>
+      
+      
+         
+      <script>
+          
+          
+            function toggleClock() { 
+    // get the clock 
+    var myClock = document.getElementById('clock');
+
+    // get the current value of the clock's display property 
+    var displaySetting = myClock.style.display;
+
+    // also get the clock button, so we can change what it says 
+    var clockButton = document.getElementById('clockButton');
+				
+    // now toggle the clock and the button text, depending on current state
+    if (displaySetting == 'block') { 
+      // clock is visible. hide it
+      myClock.style.display = 'none';
+      // change button text
+      clockButton.innerHTML = 'Show clock';
+    }
+    else { 
+      // clock is hidden. show it 
+      myClock.style.display = 'block';
+      // change button text
+      clockButton.innerHTML = 'Hide clock';
+    }
+            }
+          
+     
+      
+          
+  function showAlert() { 
+    var myText = "I have learned about fair use and how to make memes from Mr. T";
+      alert (myText);
+  }
+            
+            function updateTime() { 
+
+  	// get all parts of the current time
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // splice them together into a character string named "currentTime"
+       // add leading zero's to minutes and seconds
+  if (minutes < 10) { 
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) { 
+    seconds = '0' + seconds;
+  }				
+
+  // get time of day (am or pm) 
+  if (hours >= 12 && hours < 24) { 
+    var timeOfDay = 'pm';
+  }
+  else { 
+    var timeOfDay = 'am'; 
+  }
+				
+  // convert hours from 24-hour time to 12-hour time
+  if (hours > 12) { 
+    hours = hours - 12;
+  }           
+   var currentTime = hours + ':' + minutes + ':' + seconds + '  ' + timeOfDay; 
+    
+    // get the clock div 
+    var myClock = document.getElementById('clock');
+    
+    // write the currentTime string to the clock div
+    myClock.innerHTML = currentTime;
+                
+                 
+  }
+            
+  </script>
+  </head>
+  <body onload="setInterval('updateTime()',1000)">
+      
+      <button onclick="toggleClock()" id="clockButton">Show clock</button>
+      
+      <div id="clock">
+               
+      </div>
+      
+      
+      <div id="banner">
+<a href="_assets/images/banner.jpg">
+ <img src="_assets/images/banner.jpg" width="720px" height="200px+" style= "border:none"        
+        </a>
+  <nav> 
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="usability.html">Usability</a></li>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="javascript.html">Javascript</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="video.html">Videos</a></li> 
+    </ul>
+  </nav> 
+ 
+    <!-- The content of your web page will go here -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <br><br><br><br><br>
+    <form>
+    
+    
+<div id="form">     
+    
+    <!-- form code--> 
+    
+   
+        
+ Name:
+        <br> 
+<input type= "text" name= "name">
+        <br> 
+ Email:
+        <br> 
+        <input type="type"> 
+    
+        <br>
+        Gender:
+        <br>
+<select name="gender"> 
+        <option value="firstop" selected> -Select-
+</option>
+        <option value="male">Male        </option>
+        <option value="female">Female
+</option>
+        <option value="noanswer">Prefer not to say 
+</option> 
+        </select>
+        <br> 
+        Have you traveled ______?:
+        <br>
+        <input type= "checkbox" name="city" value="City"> Out of the city?
+        <br>
+        <input type= "checkbox" name="state" value="State"> Out of the state?
+        <br>
+        <input type= "checkbox" name="country" value="Country"> Out of the country?
+        <br>
+        Which do you like traveling more?
+        <br>
+        <input type="radio" name="prefer" value="state" > Out of state?
+        <br>
+        <input type= "radio" name="prefer" value="country"> Out of the country?
+        <br>
+        <input type= "radio" name="prefer" value="home">Staying at home
+        
+    <br>
+        <input type="submit" onclick="alert('Your form has been submitted.')">
+        </div>   
+    
+
+        
+       
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </form>
+  </body>
+</html>
